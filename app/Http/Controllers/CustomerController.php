@@ -31,4 +31,16 @@ class CustomerController extends Controller
             ]);
         }
     }
+
+    public function destroy($customer_id)
+    {
+        $customer = Customer::find($customer_id);
+        if($customer){
+            $customer->delete();
+            $message = "Data deleted Successfully";
+        }else{
+            $message = "Something went wrong !";
+        }
+        return redirect('/customers-data')->with('message', $message);
+    }
 }

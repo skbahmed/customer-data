@@ -14,7 +14,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/customers-data', [CustomerController::class, 'showData'])->middleware(['auth'])->name('dashboard');
-Route::get('/customers-api', [CustomerController::class, 'showAPI'])->middleware(['auth'])->name('dashboard');
+
+Route::controller(CustomerController::class)->group(function(){
+
+    Route::get('/customers-data', 'showData')->middleware(['auth'])->name('dashboard');
+    Route::get('/customers-api', 'showAPI')->middleware(['auth'])->name('dashboard');
+    Route::get('delete-customer/{customer_id}', 'destroy')->middleware(['auth']);
+
+});
 
 require __DIR__.'/auth.php';
