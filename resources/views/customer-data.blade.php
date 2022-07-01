@@ -3,7 +3,7 @@
 @section('main-container')
 <x-app-layout>
     <x-slot name="header"></x-slot>
-    <div class="container">
+    <div class="container pb-5">
         <h1 class="text-capitalize text-center py-5 h1">customer data</h1>
         <table class="table table-striped bg-light table-bordered">
             <thead>
