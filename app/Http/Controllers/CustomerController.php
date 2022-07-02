@@ -16,7 +16,7 @@ class CustomerController extends Controller
 
     public function showAPI()
     {
-        return Customer::orderBy('id')->paginate(10);
+        return Customer::orderBy('id')->paginate(20);
     }
 
     public function destroy($customer_id)
