@@ -18,7 +18,6 @@ Route::get('/dashboard', function () {
 Route::controller(CustomerController::class)->group(function(){
 
     Route::get('/customers-data', 'showData')->middleware(['auth'])->name('dashboard');
-    Route::get('/customers-api', 'showAPI')->middleware(['auth'])->name('dashboard');
     Route::get('delete-customer/{customer_id}', 'destroy')->middleware(['auth']);
 
 });

@@ -21,6 +21,11 @@
                         {{ __('All Customers Data') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="url('api/customers-data')">
+                        {{ __('All Customers Data API') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

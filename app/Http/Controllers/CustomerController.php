@@ -16,20 +16,7 @@ class CustomerController extends Controller
 
     public function showAPI()
     {
-        try{
-            $customers = Customer::orderBy('id')->get();
-            return response
-            ([
-                'message' => 'Showing all the data successfully',
-                'customer' => $customers
-            ]);
-        }
-        catch(Exception $ex){
-            return response
-            ([
-                'message' => $ex->getMessage()
-            ]);
-        }
+        return Customer::orderBy('id')->paginate(10);
     }
 
     public function destroy($customer_id)
