@@ -16,7 +16,8 @@ class CustomerController extends Controller
 
     public function index()
     {
-        return response()->json(Customer::orderBy('id')->paginate(20));
+        $customers = Customer::orderBy('id')->paginate(20);
+        return response()->json($customers);
     }
 
     public function destroy($customer_id)
