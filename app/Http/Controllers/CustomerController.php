@@ -14,7 +14,7 @@ class CustomerController extends Controller
         return view('customer-data', compact('customers'));
     }
 
-    public function showAPI()
+    public function index()
     {
         return Customer::orderBy('id')->paginate(20);
     }
